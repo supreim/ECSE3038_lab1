@@ -26,7 +26,20 @@ def potential_divider(volt, resistances):
     return (volt,total_resistance,current,volt_drops)
     
 def temperature_check(temp,unit):
-    pass
+    if unit.upper() == "C":
+        if temp < 20:
+            print("The patient is hypothermic")
+        else:
+            print("The patient's temperature is normal")
+    elif unit.upper() == "F":
+        if temp < 40:
+            print("The patient is hypothermic")
+        else:
+            print("The patient's temperature is normal")
+    else:
+        print("Enter a correct unit: C or F")
+    
 
 # parallel([330,1000,2200])
-potential_divider(9,[3000,1000])
+# potential_divider(9,[3000,1000])
+temperature_check(32,"C");
